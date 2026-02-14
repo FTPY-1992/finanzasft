@@ -1,0 +1,21 @@
+# Android
+.gradle
+local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+*.iml
+build/
+captures/
+.cxx
+
+# Kotlin
+.kotlin
+
+# Misc
+*.class
+*.jar
+*.war
+*.ear
+*.log

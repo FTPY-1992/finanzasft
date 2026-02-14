@@ -1,17 +1,21 @@
 package com.example.finanzasft.data
 
-import androidx.appcompat.resources.R
+import androidx.annotation.DrawableRes
+import com.example.finanzasft.R
 
-enum class Category(val displayName: String, val iconResId: Int? = null) {
-    COMIDA("Comida",R.drawable.ic_food_bank),
-    BEBIDAS("Bebidas",R.drawable.ic_local_drink),
-    HIGIENE_PERSONAL("Higiene/Personal",R.drawable.ic_spa),
-    SALUD("Salud",R.drawable.ic_local_hospital),
-    SERVICIOS("Servicios",R.drawable.ic_settings_input_antenna),
-    OTROS("Otros",R.drawable.ic_more_horiz),
-    LIMPIEZA_HOGAR("Limpieza/Hogar",R.drawable.ic_cleaning_services),
-    ROPA("Ropa",R.drawable.ic_pets),
-    MASCOTAS("Mascotas",R.drawable.ic_pets),
-    DIVERSION("Diversion",R.drawable.sports_esports),
-    TRASNPORTE("Transporte",R.drawable.ic_directions_car)
+
+enum class Category(
+    val displayName: String,
+    @DrawableRes val iconResId: Int) {
+    COMIDA("Comida", R.drawable.restaurant_24dp),
+    BEBIDAS("Bebidas",R.drawable.local_bar_24dp),
+    HIGIENE_PERSONAL("Higiene/Personal",R.drawable.spa_24dp),
+    SALUD("Salud",R.drawable.local_hospital_24dp),
+    SERVICIOS("Servicios",R.drawable.linked_services_24dp),
+    OTROS("Otros",R.drawable.more_horiz_24dp),
+    LIMPIEZA_HOGAR("Limpieza/Hogar",R.drawable.cleaning_24dp),
+    ROPA("Ropa",R.drawable.checkroom_24dp),
+    MASCOTAS("Mascotas",R.drawable.pets_24dp),
+    DIVERSION("Diversion",R.drawable.sports_esports_24dp),
+    TRASNPORTE("Transporte",R.drawable.directions_car_24dp)
 }

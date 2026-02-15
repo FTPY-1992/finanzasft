@@ -3,4 +3,5 @@
     <string name="text_button_btnMoreCategories">Más</string>
     <string name="text_tvEmpty">No hay productos en esta categoría</string>
     <string name="fab_add_product">Agregar nuevo producto</string>
+    <string name="category_icon">Icono de categoria</string>
 </resources>

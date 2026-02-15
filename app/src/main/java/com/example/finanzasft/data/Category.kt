@@ -6,7 +6,7 @@ import com.example.finanzasft.R
 
 enum class Category(
     val displayName: String,
-    @DrawableRes val iconResId: Int) {
+    @param: DrawableRes val iconResId: Int) {
     COMIDA("Comida", R.drawable.restaurant_24dp),
     BEBIDAS("Bebidas",R.drawable.local_bar_24dp),
     HIGIENE_PERSONAL("Higiene/Personal",R.drawable.spa_24dp),

@@ -14,5 +14,5 @@ data class ProductEntity (
     val quantityBought: Int,
     val quantityConsumed: Int,
     val photoPath: String? = null,
-    val category: Enum<Category>
+    val category: Category? = null
 )

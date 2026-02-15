@@ -6,19 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Mensaje cuando no hay productos (visible solo si la lista esta vacía) -->
+    <!-- Grid horizontal de categorias visibles  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCategories"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnMoreCategories"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Boton "Mas" para categorias ocultas -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnMoreCategories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_btnMoreCategories"
+        android:textSize="12sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/recyclerCategories"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Mensaje vacío -->
     <TextView
         android:id="@+id/tvEmpty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No hay productos registrados aún"
+        android:text="@string/text_tvEmpty"
         android:textSize="18sp"
-        android:textColor="?android:attr/textColorSecondary"
+        android:textColor="?attr/colorOnSurfaceVariant"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerCategories"
         />
 
     <!-- Lista de productos -->
@@ -31,19 +54,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <!-- Botón flotante para agregar producto -->
+        app:layout_constraintTop_toBottomOf="@id/recyclerCategories" />
+    
+    <!-- FAB para agregar -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd"
+        android:id="@+id/FabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:contentDescription="Agregar producto"
+        android:contentDescription="@string/fab_add_product"
         android:src="@android:drawable/ic_menu_add"
-        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,23 @@ data class ProductEntity (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    @ColumnInfo(defaultValue = "Null") val brand: String?,
-    @ColumnInfo(defaultValue = "Null") val description: String?,
+    val brand: String? = null,
+    val description: String? = null,
     val price: Double,
     val quantityBought: Int,
     val quantityConsumed: Int,
-    @ColumnInfo(defaultValue = "Null") val photoPath: String? = null,
-    @ColumnInfo(defaultValue = "Null") val category: Category? = null
-)
+    val photoPath: String? = null,
+    val category: Category? = null
+) {
+    //Constructor secundario para uso manual
+    constructor(
+        name: String,
+        brand: String? = null,
+        description: String? = null,
+        price: Double,
+        quantityBought: Int,
+        quantityConsumed: Int,
+        photoPath: String? = null,
+        category: Category? = null
+    ) : this(0,name,brand,description,price,quantityBought,quantityConsumed,photoPath,category)
+}

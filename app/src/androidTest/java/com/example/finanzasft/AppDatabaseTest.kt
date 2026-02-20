@@ -44,14 +44,22 @@ class AppDatabaseTest {
 
     @Test
     fun insertMultipleAndReadAll() = runBlocking {
-        dao.insert(ProductEntity(name = "Pizza", price = 8500.0, quantityBought = 1, quantityConsumed = 0, category = Category.COMIDA))
+        dao.insert(ProductEntity(name = "Pizza", price = 8500.0, quantityBought = 1, quantityConsumed = 1, category = Category.COMIDA))
         dao.insert(ProductEntity(name = "Cerveza", price = 2500.0, quantityBought = 6, quantityConsumed = 2, category = Category.BEBIDAS))
         dao.insert(ProductEntity(name = "Aspirina", price = 800.0, quantityBought = 2, quantityConsumed = 1, category = Category.SALUD))
 
         val products = dao.getAllProducts().first()
-        assertEquals(3,products.size)
-        assertEquals("Pizza", products[0].name)
-        assertEquals(Category.COMIDA,products[0].category)
+
+        assertEquals(3, products.size)
+
+        val pizza = products.first { it.name == "Pizza" }
+        assertEquals(Category.COMIDA, pizza.category)
+
+        val cerveza = products.first { it.name == "Cerveza" }
+        assertEquals(Category.BEBIDAS, cerveza.category)
+
+        val aspirina = products.first { it.name == "Aspirina" }
+        assertEquals(Category.SALUD, aspirina.category)
     }
 
     @Test
